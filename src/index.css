@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Nord Theme Colors */
+  --nord0: #2E3440;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
+  --nord7: #8FBCBB;
+  --nord8: #88C0D0;
+  --nord9: #81A1C1;
+  --nord10: #5E81AC;
+  --nord11: #BF616A;
+  --nord12: #D08770;
+  --nord13: #EBCB8B;
+  --nord14: #A3BE8C;
+  --nord15: #B48EAD;
+}
+
+@layer base {
+  body {
+    @apply bg-nord-0 text-nord-4 font-share-tech;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg transition-colors duration-200 font-share-tech;
+  }
+
+  .btn-primary {
+    @apply bg-nord-10 hover:bg-nord-9 text-nord-6;
+  }
+
+  .btn-secondary {
+    @apply bg-nord-3 hover:bg-nord-2 text-nord-6;
+  }
+
+  .input {
+    @apply bg-nord-1 border border-nord-3 rounded-lg px-4 py-2 text-nord-4 focus:outline-none focus:border-nord-8;
+  }
+
+  .card {
+    @apply bg-nord-1 rounded-lg p-6 shadow-lg;
+  }
+}
