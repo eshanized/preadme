@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Credits = () => {
   return (
     <div className="text-nord-4 mb-4 md:mb-0">

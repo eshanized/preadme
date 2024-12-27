@@ -10,8 +10,18 @@ interface EditorToolbarProps {
   onUploadImage: () => void;
 }
 
+type Tool = {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  text: string;
+  label: string;
+};
+
+type Divider = {
+  type: 'divider';
+};
+
 const EditorToolbar: React.FC<EditorToolbarProps> = ({ onInsert, onCreateTable, onUploadImage }) => {
-  const tools = [
+  const tools: (Tool | Divider)[] = [
     { icon: Heading1, text: '# ', label: 'Heading 1' },
     { icon: Heading2, text: '## ', label: 'Heading 2' },
     { icon: Heading3, text: '### ', label: 'Heading 3' },
@@ -30,10 +40,13 @@ const EditorToolbar: React.FC<EditorToolbarProps> = ({ onInsert, onCreateTable, 
 
   return (
     <div className="flex flex-wrap gap-1 p-2 bg-nord-1 rounded-t-lg border-b border-nord-3">
-      {tools.map((tool, index) => (
-        tool.type === 'divider' ? (
-          <div key={index} className="w-px h-6 bg-nord-3 mx-2" />
-        ) : (
+      {tools.map((tool, index) => {
+        if ('type' in tool && tool.type === 'divider') {
+          return <div key={index} className="w-px h-6 bg-nord-3 mx-2" />;
+        }
+
+        // Safe to assume `tool` is a `Tool` here
+        return (
           <button
             key={tool.label}
             onClick={() => onInsert(tool.text)}
@@ -42,11 +55,11 @@ const EditorToolbar: React.FC<EditorToolbarProps> = ({ onInsert, onCreateTable, 
           >
             <tool.icon className="w-4 h-4" />
           </button>
-        )
-      ))}
-      
+        );
+      })}
+
       <div className="w-px h-6 bg-nord-3 mx-2" />
-      
+
       <button
         onClick={onCreateTable}
         className="p-2 hover:bg-nord-2 rounded-md text-nord-4 transition-colors"
@@ -54,7 +67,7 @@ const EditorToolbar: React.FC<EditorToolbarProps> = ({ onInsert, onCreateTable, 
       >
         <Table className="w-4 h-4" />
       </button>
-      
+
       <button
         onClick={onUploadImage}
         className="p-2 hover:bg-nord-2 rounded-md text-nord-4 transition-colors"
