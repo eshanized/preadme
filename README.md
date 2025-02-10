@@ -1,13 +1,13 @@
-# Preadme
+# Project Readme
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/eshanized/preadme.svg)](https://github.com/eshanized/preadme/releases)
-[![Build Status](https://github.com/eshanized/preadme/workflows/build/badge.svg)](https://github.com/eshanized/preadme/actions)
-[![Dependencies](https://img.shields.io/david/eshanized/preadme.svg)](https://david-dm.org/eshanized/preadme)
+[![GitHub release](https://img.shields.io/github/release/eshanized/project-readme.svg)](https://github.com/eshanized/project-readme/releases)
+[![Build Status](https://github.com/eshanized/project-readme/workflows/build/badge.svg)](https://github.com/eshanized/project-readme/actions)
+[![Dependencies](https://img.shields.io/david/eshanized/project-readme.svg)](https://david-dm.org/eshanized/project-readme)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-Preadme is a modern, feature-rich README generator built with React and TypeScript. Create professional documentation for your projects with an intuitive interface and powerful features.
+Project Readme is a modern, feature-rich README generator built with React and TypeScript. Create professional documentation for your projects with an intuitive interface and powerful features.
 
 ### 🎯 Key Features
 
