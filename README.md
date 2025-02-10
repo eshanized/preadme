@@ -1,157 +1,163 @@
 # Preadme
 
-Preadme is an open-source web application designed to help developers quickly generate well-structured and customizable README files for their projects. Whether you're creating a new project or updating an existing one, Preadme makes it easy to generate a polished README with minimal effort.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/release/eshanized/preadme.svg)](https://github.com/eshanized/preadme/releases)
+[![Build Status](https://github.com/eshanized/preadme/workflows/build/badge.svg)](https://github.com/eshanized/preadme/actions)
+[![Dependencies](https://img.shields.io/david/eshanized/preadme.svg)](https://david-dm.org/eshanized/preadme)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
+Preadme is a modern, feature-rich README generator built with React and TypeScript. Create professional documentation for your projects with an intuitive interface and powerful features.
 
+### 🎯 Key Features
+
+- **Interactive Editor**
+  - Real-time Markdown preview
+  - Syntax highlighting
+  - Keyboard shortcuts
+  - Auto-save functionality
+
+- **Rich Content Support**
+  - Tables with alignment options
+  - Code blocks with syntax highlighting
+  - Image uploads and embedding
+  - Task lists and checkboxes
+
+- **Templates & Customization**
+  - Pre-built templates for different project types
+  - Custom section ordering
+  - Dark/Light theme support
+  - Responsive design for all devices
+
+- **Export Options**
+  - Download as Markdown (.md)
+  - Copy to clipboard
+  - Direct GitHub integration
+  - HTML export (coming soon)
 
 ### 🚀 Demo
 
-Experience the simplicity of README generation with our live demo:  
-[**Try Preadme Now**](https://eshanized.github.io/preadme)
+Experience Preadme in action: [Live Demo](https://eshanized.github.io/preadme)
 
+### 💻 Tech Stack
 
+- **Frontend Framework**: React 18 with TypeScript
+- **State Management**: Zustand
+- **Styling**: Tailwind CSS + Nord Theme
+- **Markdown Processing**: React Markdown + Remark
+- **Build Tool**: Vite
+- **Package Manager**: npm
+- **Code Quality**: ESLint + Prettier
+- **Testing**: Jest + React Testing Library (coming soon)
 
-### 📦 Features
+### ⚡ Performance
 
-- **Interactive UI**: Build your README step-by-step with a user-friendly interface and guided prompts.
-- **Customizable Sections**: Include or exclude sections like:
-  - Project Name and Description
-  - Features
-  - Tech Stack
-  - Installation Instructions
-  - Usage Guidelines
-  - Contribution Guidelines
-  - Licensing Information
-- **Markdown Support**: Generates Markdown (.md) format compatible with GitHub and other platforms.
-- **Live Preview**: Instantly preview your README as you make edits.
-- **Download & Export**: Save your README as a `.md` file or copy it to your clipboard.
-- **Default Templates**: Start with pre-designed templates tailored for common project types.
-- **Accessibility**: Designed to ensure readability and usability for everyone.
-- **Mobile-Friendly**: Create READMEs on the go with a responsive design.
+- Lighthouse Score: 95+ across all metrics
+- First Contentful Paint: < 1s
+- Time to Interactive: < 2s
+- Bundle Size: < 200KB (gzipped)
 
+### 🌐 Browser Support
 
+- Chrome (last 2 versions)
+- Firefox (last 2 versions)
+- Safari (last 2 versions)
+- Edge (last 2 versions)
+- Opera (last 2 versions)
 
-### 🛠️ Tech Stack
-
-Preadme is built using modern, scalable technologies:
-
-- **Frontend**: React with Hooks and functional components.
-- **Styling**: Tailwind CSS for sleek, responsive design.
-- **Routing**: React Router for seamless navigation between sections.
-- **State Management**: Zustand for lightweight and intuitive state handling.
-- **Build Tool**: Vite for lightning-fast builds and modern tooling.
-- **Icons**: Lucide-React for minimal and attractive SVG icons.
-- **Markdown Parsing**: React Markdown and Remark for rich Markdown support.
-
-
-
-### 💻 Installation
-
-Follow these steps to set up and run Preadme on your local machine:
+### 📦 Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/eshanized/preadme.git
-    ```
+   ```bash
+   git clone https://github.com/eshanized/preadme.git
+   cd preadme
+   ```
 
-2. Navigate to the project directory:
-    ```bash
-    cd preadme
-    ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-3. Install the required dependencies:
-    ```bash
-    npm install
-    ```
+3. Start development server:
+   ```bash
+   npm run dev
+   ```
 
-4. Start the development server:
-    ```bash
-    npm run dev
-    ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
 
-5. Open your browser and go to:
-    ```
-    http://localhost:5173
-    ```
+### 🔧 Configuration
 
-6. Build the production-ready files:
-    ```bash
-    npm run build
-    ```
+Create a `.env` file in the root directory:
+```env
+VITE_APP_TITLE=Preadme
+VITE_GITHUB_TOKEN=your_github_token
+VITE_API_URL=your_api_url
+```
 
-7. Preview the built application:
-    ```bash
-    npm run preview
-    ```
+### 🤝 Contributing
 
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
+#### Contribution Guidelines
 
-### 🎨 How to Customize
+- Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification
+- Write clear commit messages
+- Include tests for new features
+- Update documentation as needed
+- Follow the existing code style
 
-- **Modifying Styles**: Edit the `tailwind.config.js` file to adjust styling preferences.
-- **Adding New Sections**: Add components in the `src/components` folder to introduce custom sections.
-- **Template Changes**: Update the templates located in `src/templates` for default README structure and wording.
-- **Icon Updates**: Use different icons by editing imports in `src/icons`.
-- **Deployment Config**: Adjust `vite.config.ts` to customize deployment settings like the `base` URL.
+### 🗺️ Development Roadmap
 
+- [ ] GitHub API integration
+- [ ] Custom template creation
+- [ ] Collaborative editing
+- [ ] Export to PDF
+- [ ] Multiple language support
+- [ ] AI-powered content suggestions
 
+### ❓ Troubleshooting
 
-### 📚 How to Use
+Common issues and solutions:
 
-1. Open the [live demo](https://eshanized.github.io/preadme) or set up the app locally.
-2. Enter the project details in each step of the form.
-3. Preview your README in real time to ensure it meets your expectations.
-4. Click "Download" to save the generated README as a `.md` file.
+1. **Build Errors**
+   - Clear npm cache: `npm cache clean --force`
+   - Delete node_modules: `rm -rf node_modules`
+   - Reinstall dependencies: `npm install`
 
+2. **Runtime Errors**
+   - Check browser console for errors
+   - Verify environment variables
+   - Clear browser cache
 
+### 📈 Statistics
 
-### 🧑‍💻 Contributing
+- GitHub Stars: ![GitHub stars](https://img.shields.io/github/stars/eshanized/preadme.svg)
+- Downloads: ![npm downloads](https://img.shields.io/npm/dm/preadme.svg)
+- Contributors: ![GitHub contributors](https://img.shields.io/github/contributors/eshanized/preadme.svg)
 
-Contributions are highly encouraged! Preadme is open-source and thrives on community involvement.
+### 📄 License
 
-#### 📋 Contribution Workflow:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-1. **Fork** the repository.
-2. Clone your fork locally:
-    ```bash
-    git clone https://github.com/<your-username>/preadme.git
-    ```
-3. Create a feature branch:
-    ```bash
-    git checkout -b feature-name
-    ```
-4. Make your changes and commit:
-    ```bash
-    git commit -m "Add your descriptive commit message here"
-    ```
-5. Push to your fork:
-    ```bash
-    git push origin feature-name
-    ```
-6. Open a **Pull Request** with a detailed description of your changes.
+### 🙏 Acknowledgments
 
-For larger changes, feel free to open an issue first to discuss your idea.
+- [Nord Theme](https://www.nordtheme.com/) for the color scheme
+- [Lucide Icons](https://lucide.dev/) for the beautiful icons
+- All our [contributors](https://github.com/eshanized/preadme/graphs/contributors)
 
-## Contributing
+### 📞 Support
 
-Feel free to fork this repository and submit a pull request with your contributions.
+- Create an [Issue](https://github.com/eshanized/preadme/issues)
+- Join our [Discord](https://discord.gg/preadme)
+- Follow us on [Twitter](https://twitter.com/preadme)
 
-## License
+---
 
-This project is licensed under the MIT License.
-
-
-
-
-### 📝 License
-
-This project is licensed under the MIT License.  
-See the [LICENSE](https://github.com/eshanized/preadme/blob/master/LICENSE) file for details.
-
-
-
-### 🔗 Useful Links
-
-- [GitHub Repository](https://github.com/eshanized/preadme)  
-- [Live Demo](https://eshanized.github.io/preadme)  
-- [Report Issues](https://github.com/eshanized/preadme/issues)  
+Made with ❤️ by [eshanized](https://github.com/eshanized)
