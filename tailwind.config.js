@@ -22,7 +22,7 @@ export default {
         'nord-15': '#B48EAD',
       },
       fontFamily: {
-        'share-tech': ['"Share Tech"', 'sans-serif'],
+        'fira-code': ['"Fira Code"', 'monospace'],
       },
       typography: (theme) => ({
         invert: {

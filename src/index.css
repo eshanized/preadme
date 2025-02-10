@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+/* Replace Share Tech with Fira Code */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,13 +27,17 @@
 
 @layer base {
   body {
-    @apply bg-nord-0 text-nord-4 font-share-tech;
+    @apply bg-nord-0 text-nord-4 font-fira-code;
+  }
+
+  code {
+    @apply font-fira-code;
   }
 }
 
 @layer components {
   .btn {
-    @apply px-4 py-2 rounded-lg transition-colors duration-200 font-share-tech;
+    @apply px-4 py-2 rounded-lg transition-colors duration-200 font-fira-code;
   }
 
   .btn-primary {
@@ -44,7 +49,7 @@
   }
 
   .input {
-    @apply bg-nord-1 border border-nord-3 rounded-lg px-4 py-2 text-nord-4 focus:outline-none focus:border-nord-8;
+    @apply bg-nord-1 border border-nord-3 rounded-lg px-4 py-2 text-nord-4 focus:outline-none focus:border-nord-8 font-fira-code;
   }
 
   .card {

@@ -5,7 +5,7 @@ import { ReadmeState, Section } from '../types';
 interface ReadmeStore extends ReadmeState {
   setTitle: (title: string) => void;
   setDescription: (description: string) => void;
-  setSections: (sections: Section[]) => void;
+  setSections: (sections: Section[] | ((prev: Section[]) => Section[])) => void;
   setSelectedTemplate: (templateId: string | null) => void;
   toggleDarkMode: () => void;
   setAuthor: (author: string) => void;
@@ -17,7 +17,7 @@ interface ReadmeStore extends ReadmeState {
 const initialState: ReadmeState = {
   title: '',
   description: '',
-  sections: [],
+  sections: [], // Ensure this is always initialized as an array
   selectedTemplate: null,
   darkMode: true,
   author: 'eshanized',
@@ -31,7 +31,12 @@ export const useStore = create<ReadmeStore>()(
       ...initialState,
       setTitle: (title: string) => set({ title }),
       setDescription: (description: string) => set({ description }),
-      setSections: (sections: Section[]) => set({ sections }),
+      setSections: (sectionsOrUpdater: Section[] | ((prev: Section[]) => Section[])) =>
+        set((state) => ({
+          sections: Array.isArray(sectionsOrUpdater)
+            ? sectionsOrUpdater
+            : sectionsOrUpdater(state.sections || [])
+        })),
       setSelectedTemplate: (templateId: string | null) => set({ selectedTemplate: templateId }),
       toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
       setAuthor: (author: string) => set({ author }),

@@ -13,6 +13,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ section }) => {
   const { setSections } = useStore();
   const [showTableCreator, setShowTableCreator] = useState(false);
   const [showImageUploader, setShowImageUploader] = useState(false);
+  const textareaId = `section-${section.id}`; // Define textareaId consistently
 
   const handleContentChange = (content: string) => {
     setSections((prev) =>
@@ -21,14 +22,14 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ section }) => {
   };
 
   const insertContent = (text: string) => {
-    const textarea = document.getElementById(`section-${section.id}`) as HTMLTextAreaElement;
+    const textarea = document.getElementById(textareaId) as HTMLTextAreaElement;
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
     const content = textarea.value;
-    
+
     const newContent = content.substring(0, start) + text + content.substring(end);
     handleContentChange(newContent);
-    
+
     // Set cursor position after inserted text
     setTimeout(() => {
       textarea.focus();
@@ -39,16 +40,17 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ section }) => {
   return (
     <div className="space-y-2">
       <h3 className="text-nord-6 font-bold">{section.title}</h3>
-      
+
       <div className="border border-nord-3 rounded-lg">
         <EditorToolbar
           onInsert={insertContent}
           onCreateTable={() => setShowTableCreator(true)}
           onUploadImage={() => setShowImageUploader(true)}
+          textareaId={textareaId} // Pass the textareaId prop
         />
-        
+
         <textarea
-          id={`section-${section.id}`}
+          id={textareaId} // Use the same textareaId
           value={section.content}
           onChange={(e) => handleContentChange(e.target.value)}
           className="w-full h-48 p-4 bg-nord-0 text-nord-4 font-mono text-sm resize-y rounded-b-lg focus:outline-none"
