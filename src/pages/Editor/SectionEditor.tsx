@@ -3,7 +3,7 @@ import { useStore } from '../../store/useStore';
 import { Section } from '../../types';
 import EditorToolbar from '../../components/EditorToolbar';
 import TableCreator from '../../components/TableCreator';
-import ImageUploader from '../../components/ImageUploader';
+import ImageGuide from '../../components/ImageGuide';
 
 interface SectionEditorProps {
   section: Section;
@@ -12,8 +12,8 @@ interface SectionEditorProps {
 const SectionEditor: React.FC<SectionEditorProps> = ({ section }) => {
   const { setSections } = useStore();
   const [showTableCreator, setShowTableCreator] = useState(false);
-  const [showImageUploader, setShowImageUploader] = useState(false);
-  const textareaId = `section-${section.id}`; // Define textareaId consistently
+  const [showImageGuide, setShowImageGuide] = useState(false);
+  const textareaId = `section-${section.id}`;
 
   const handleContentChange = (content: string) => {
     setSections((prev) =>
@@ -45,7 +45,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ section }) => {
         <EditorToolbar
           onInsert={insertContent}
           onCreateTable={() => setShowTableCreator(true)}
-          onUploadImage={() => setShowImageUploader(true)}
+          onUploadImage={() => setShowImageGuide(true)}
           textareaId={textareaId} // Pass the textareaId prop
         />
 
@@ -65,10 +65,9 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ section }) => {
         />
       )}
 
-      {showImageUploader && (
-        <ImageUploader
-          onInsert={insertContent}
-          onClose={() => setShowImageUploader(false)}
+      {showImageGuide && (
+        <ImageGuide
+          onClose={() => setShowImageGuide(false)}
         />
       )}
     </div>
