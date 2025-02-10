@@ -10,6 +10,7 @@ interface ReadmeStore extends ReadmeState {
   toggleDarkMode: () => void;
   setAuthor: (author: string) => void;
   updateLastSaved: () => void;
+  setLoading: (loading: boolean) => void;
   reset: () => void;
 }
 
@@ -21,6 +22,7 @@ const initialState: ReadmeState = {
   darkMode: true,
   author: 'eshanized',
   lastSaved: new Date().toISOString(),
+  isLoading: false,
 };
 
 export const useStore = create<ReadmeStore>()(
@@ -34,6 +36,7 @@ export const useStore = create<ReadmeStore>()(
       toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
       setAuthor: (author: string) => set({ author }),
       updateLastSaved: () => set({ lastSaved: new Date().toISOString() }),
+      setLoading: (isLoading: boolean) => set({ isLoading }),
       reset: () => set(initialState),
     }),
     {

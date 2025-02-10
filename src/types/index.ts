@@ -20,6 +20,7 @@ export interface ReadmeState {
   darkMode: boolean;
   author: string;
   lastSaved: string;
+  isLoading: boolean; // Added isLoading property
 }
 
 export interface KeyboardShortcut {
