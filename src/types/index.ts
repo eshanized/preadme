@@ -12,6 +12,13 @@ export interface Section {
   required: boolean;
 }
 
+export interface TemplateCategory {
+  id: string;
+  name: string;
+  description: string;
+  templates: Template[];
+}
+
 export interface ReadmeState {
   title: string;
   description: string;
@@ -20,7 +27,7 @@ export interface ReadmeState {
   darkMode: boolean;
   author: string;
   lastSaved: string;
-  isLoading: boolean; // Added isLoading property
+  isLoading: boolean;
 }
 
 export interface KeyboardShortcut {
