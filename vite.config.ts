@@ -1,21 +1,42 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react'], // Exclude lucide-react from optimization
+    exclude: ['lucide-react'],
   },
-  base: '/preadme/', // Set the base path for GitHub Pages
+  base: '/preadme/',
   build: {
-    outDir: 'dist', // The directory where the build output will go (default: dist)
+    outDir: 'dist',
+    // Increase chunk size warning limit
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        entryFileNames: 'script.js', // Ensure the main script is named script.js
-        chunkFileNames: 'script.js', // Ensure chunks are named script.js
-        assetFileNames: 'style.css', // Ensure CSS is named style.css
-      },
+        // Proper chunking configuration
+        manualChunks: {
+          vendor: [
+            'react',
+            'react-dom',
+            'react-router-dom',
+            'zustand',
+            'framer-motion'
+          ],
+          markdown: [
+            'react-markdown',
+            'remark-gfm',
+            'react-syntax-highlighter'
+          ]
+        },
+        // Ensure proper naming for assets
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
     },
-  },
+    // Improve CSS handling
+    cssCodeSplit: true,
+    sourcemap: false,
+    minify: 'terser'
+  }
 });
